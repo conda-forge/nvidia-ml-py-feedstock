@@ -1,5 +1,5 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "11.450.51" %}
+{% set version = "11.450.129" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5aa6dd23a140b1ef2314eee5ca154a45397b03e68fd9ebc4f72005979f511c73
+  sha256: b0170a3f16efdd055c283d3b94c7d2d517f32456e84ad118d809396929fcad4f
 
 build:
   noarch: python
@@ -21,6 +21,8 @@ requirements:
   run:
     - python >=3.4
   run_constrained:
+    # Packages that conflict with nvidia-ml-py
+    # Both packages install pynvml.py
     - nvidia-ml ==9999999999
     - pynvml ==9999999999
 
