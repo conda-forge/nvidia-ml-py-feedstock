@@ -1,11 +1,11 @@
-About nvidia-ml-py
-==================
+About nvidia-ml-py-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nvidia-ml-py-feedstock/blob/main/LICENSE.txt)
 
 Home: http://www.nvidia.com
 
 Package license: BSD-3-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/nvidia-ml-py-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python Bindings for the NVIDIA Management Library
 
