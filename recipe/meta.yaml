@@ -1,6 +1,6 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "11.525.112" %}
-{% set sha256 = "c64e473953b65ec0ccc76cf3601c3130a0ac8060bbcaea912cc00fa8e4c9868d" %}
+{% set version = "11.525.131" %}
+{% set sha256 = "2b7f4dad25c4bf49ab9d0a9a3d6e25abd168b91b5de8e2b6dee4703756c1bae5" %}
 
 package:
   name: {{ name|lower }}
