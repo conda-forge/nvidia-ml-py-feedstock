@@ -1,5 +1,6 @@
 {% set name = "nvidia-ml-py" %}
 {% set version = "12.560.30" %}
+{% set major_version = version.split(".")[0]|int %}
 {% set sha256 = "f0254dc7400647680a072ee02509bfd46102b60bdfeca321576d4d4817e7fe97" %}
 
 package:
@@ -7,33 +8,35 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.4
+    - setuptools
   run:
-    - python >=3.4
+    - python >={{ python_min }}
   run_constrained:
     # Packages that conflict with nvidia-ml-py
     # Both packages install pynvml.py
     - nvidia-ml ==9999999999
-    - pynvml ==9999999999
+    - pynvml ~={{ major_version }}.0
 
 test:
+  requires:
+    - python {{ python_min }}
+    - pip
   imports:
     - pynvml
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: http://www.nvidia.com
@@ -46,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - conda-forge/cuda
     - XuehaiPan

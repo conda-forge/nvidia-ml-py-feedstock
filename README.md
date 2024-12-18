@@ -148,4 +148,5 @@ Feedstock Maintainers
 =====================
 
 * [@XuehaiPan](https://github.com/XuehaiPan/)
+* [@conda-forge/cuda](https://github.com/orgs/conda-forge/teams/cuda/)
 
