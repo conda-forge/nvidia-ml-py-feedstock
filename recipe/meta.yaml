@@ -30,12 +30,12 @@ requirements:
     - pynvml ~={{ major_version }}.0
 
 test:
+  requires:
+    - pip
   imports:
     - pynvml
   commands:
     - pip check
-  requires:
-    - pip
 
 about:
   home: http://www.nvidia.com
