@@ -1,5 +1,6 @@
 {% set name = "nvidia-ml-py" %}
 {% set version = "12.560.30" %}
+{% set major_version = version.split(".")[0]|int %}
 {% set sha256 = "f0254dc7400647680a072ee02509bfd46102b60bdfeca321576d4d4817e7fe97" %}
 
 package:
@@ -25,7 +26,7 @@ requirements:
     # Packages that conflict with nvidia-ml-py
     # Both packages install pynvml.py
     - nvidia-ml ==9999999999
-    - pynvml ==9999999999
+    - pynvml ~={{ major_version }}.0
 
 test:
   imports:
