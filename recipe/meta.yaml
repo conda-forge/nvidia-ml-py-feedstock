@@ -18,8 +18,8 @@ build:
 
 requirements:
   host:
-    - pip
     - python >=3.4
+    - pip
   run:
     - python >=3.4
   run_constrained:
