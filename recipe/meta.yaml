@@ -1,20 +1,20 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "12.560.30" %}
+{% set version = "12.570.86" %}
 {% set major_version = version.split(".")[0]|int %}
-{% set sha256 = "f0254dc7400647680a072ee02509bfd46102b60bdfeca321576d4d4817e7fe97" %}
+{% set sha256 = "0508d4a0c7b6d015cf574530b95a62ed4fc89da3b8b47e1aefe6777db170ec8b" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
