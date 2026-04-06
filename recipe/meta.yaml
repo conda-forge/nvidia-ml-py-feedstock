@@ -13,8 +13,10 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  script:
+    - rm example.py
+    - {{ PYTHON }} -m pip install . -vv
+  number: 1
 
 requirements:
   host:
