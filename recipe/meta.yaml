@@ -1,14 +1,14 @@
 {% set name = "nvidia-ml-py" %}
-{% set version = "13.610.43" %}
+{% set version = "13.615.71" %}
 {% set major_version = version.split(".")[0]|int %}
-{% set sha256 = "65437eb73d68d0c62c931ca4d45038472faff03bd0b8729abba4b899f70d60f2" %}
+{% set sha256 = "bebe4e48f51b1dc75028c0815cb7bfa14a31a5bb80be70c9d980c6036953fc3d" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
